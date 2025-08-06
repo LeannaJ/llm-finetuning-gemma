@@ -77,7 +77,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-gray-600">
-          <p>&copy; 2024 ThinkGrade. AI-powered Educational Assessment</p>
+          <p>&copy; 2025 ThinkGrade. AI-powered Educational Assessment</p>
         </div>
       </footer>
     </div>

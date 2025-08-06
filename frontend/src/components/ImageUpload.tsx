@@ -28,7 +28,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
     } else {
-      onAnalysisError('이미지 파일만 업로드 가능합니다.');
+      onAnalysisError('Please upload an image file only.');
     }
   };
 
@@ -44,13 +44,13 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
     } else {
-      onAnalysisError('이미지 파일만 업로드 가능합니다.');
+      onAnalysisError('Please upload an image file only.');
     }
   };
 
   const handleAnalyze = async () => {
     if (!selectedFile) {
-      onAnalysisError('이미지를 선택해주세요.');
+      onAnalysisError('Please select an image first.');
       return;
     }
 
@@ -68,34 +68,34 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          timeout: 30000, // 30초 타임아웃
+          timeout: 30000, // 30 second timeout
         }
       );
 
       if (response.data.success) {
         onAnalysisComplete(response.data);
       } else {
-        onAnalysisError(response.data.error || '분석에 실패했습니다.');
+        onAnalysisError(response.data.error || 'Analysis failed.');
       }
     } catch (error) {
-      console.error('분석 오류:', error);
+      console.error('Analysis error:', error);
       if (axios.isAxiosError(error)) {
         if (error.code === 'ECONNABORTED') {
-          onAnalysisError('요청 시간이 초과되었습니다. 다시 시도해주세요.');
+          onAnalysisError('Request timeout. Please try again.');
         } else if (error.response) {
-          onAnalysisError(error.response.data.detail || '서버 오류가 발생했습니다.');
+          onAnalysisError(error.response.data.detail || 'Server error occurred.');
         } else {
-          onAnalysisError('네트워크 오류가 발생했습니다.');
+          onAnalysisError('Network error occurred.');
         }
       } else {
-        onAnalysisError('알 수 없는 오류가 발생했습니다.');
+        onAnalysisError('An unknown error occurred.');
       }
     }
   };
 
   const handleCameraCapture = () => {
-    // 카메라 캡처 기능 (향후 구현)
-    alert('카메라 기능은 향후 업데이트 예정입니다.');
+    // Camera capture feature (to be implemented)
+    alert('Camera feature will be available in future updates.');
   };
 
   const clearSelection = () => {
@@ -107,9 +107,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   const subjectOptions = [
-    { value: 'math', label: 'Math', icon: Calculator },
-    { value: 'essay', label: 'Essay', icon: FileText },
-    { value: 'notes', label: 'Notes', icon: FileText },
+    { value: 'math', label: 'Math Problem', icon: Calculator },
+    { value: 'essay', label: 'Essay/Summary', icon: FileText },
+    { value: 'notes', label: 'Study Notes', icon: FileText },
   ];
 
   return (
@@ -117,17 +117,17 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       {/* Title and Description */}
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Analyze Handwriting with AI
+          Evaluate Math & Essays with AI
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Take photos of math problems, essays, notes, and more. 
-          AI will instantly analyze and provide educational feedback.
+          Upload handwritten math problems or essays. ThinkGrade will provide 
+          step-by-step solutions and educational feedback with scoring.
         </p>
       </div>
 
       {/* Subject Selection */}
       <div className="card">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Select the subject to analyze</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Select content type to evaluate</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {subjectOptions.map((option) => {
             const Icon = option.icon;
@@ -212,7 +212,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                 disabled={isLoading}
                 className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoading ? 'Analyzing...' : 'Start Analysis'}
+                {isLoading ? 'Evaluating...' : 'Start Evaluation'}
               </button>
               <button
                 onClick={clearSelection}
@@ -226,7 +226,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         )}
       </div>
 
-      {/* 숨겨진 파일 입력 */}
+      {/* Hidden file input */}
       <input
         ref={fileInputRef}
         type="file"

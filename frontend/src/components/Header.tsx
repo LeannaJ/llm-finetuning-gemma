@@ -12,8 +12,8 @@ const Header: React.FC = () => {
               <Brain className="h-6 w-6 text-primary-500" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">WriteWise</h1>
-              <p className="text-sm text-gray-600">AI-powered Education Assistant</p>
+              <h1 className="text-2xl font-bold text-gray-900">ThinkGrade</h1>
+              <p className="text-sm text-gray-600">AI-powered Educational Assessment</p>
             </div>
           </div>
           

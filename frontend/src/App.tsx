@@ -33,7 +33,7 @@ function App() {
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="space-y-8">
-          {/* 메인 업로드 섹션 */}
+          {/* Main upload section */}
           <ImageUpload 
             onAnalysisStart={handleAnalysisStart}
             onAnalysisComplete={handleAnalysisComplete}
@@ -45,7 +45,7 @@ function App() {
           {isLoading && (
             <div className="card text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Analyzing image...</p>
+              <p className="text-gray-600">Evaluating content...</p>
               <p className="text-sm text-gray-500 mt-2">Please wait a moment</p>
             </div>
           )}
@@ -60,14 +60,14 @@ function App() {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-sm font-medium text-red-800">Error occurred during analysis</h3>
+                  <h3 className="text-sm font-medium text-red-800">Error occurred during evaluation</h3>
                   <p className="text-sm text-red-700 mt-1">{error}</p>
                 </div>
               </div>
             </div>
           )}
           
-          {/* 분석 결과 */}
+          {/* Evaluation result */}
           {analysisData && (
             <AnalysisResult data={analysisData} />
           )}
@@ -77,7 +77,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-gray-600">
-          <p>&copy; 2024 WriteWise. AI-powered Education Assistant</p>
+          <p>&copy; 2024 ThinkGrade. AI-powered Educational Assessment</p>
         </div>
       </footer>
     </div>

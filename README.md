@@ -12,7 +12,7 @@ Most learning apps do one thing well: they either show you how to solve a math p
 
 Because everything runs in 4-bit quantization, ThinkGrade fits comfortably on two modest T4 GPUs (or a single A100). That means schools—or parents—can host it privately without handing student data to a third-party API.
 
-## 🔧 How It Works (Plain English!)
+## 🔧 How It Works
 
 1. **You ask a question.**
    - "Solve ∫x² dx." or "Summarize this article in three sentences."
@@ -237,14 +237,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [MathX-5M Dataset](https://huggingface.co/datasets/microsoft/MathX-5M)
 - [CNN/DailyMail Dataset](https://huggingface.co/datasets/cnn_dailymail)
 - [llama.cpp Documentation](https://github.com/ggerganov/llama.cpp)
-
-## 📞 Support
-
-For questions and support:
-- Create an issue on GitHub
-- Check the documentation in the `writeup/` folder
-- Review the fine-tuning notebooks in the `colab/` folder
-
----
-
-**Built with ❤️ for accessible, private educational AI**

@@ -2,6 +2,12 @@
 
 An approachable AI companion that explains math and grades essays—straight from your laptop, tablet, or even a low-cost cloud GPU.
 
+## 🖼️ Product Demo
+
+![Product Demo 1](product_demo_1.png)
+
+![Product Demo 2](product_demo_2.png)
+
 ## 🎯 Why ThinkGrade?
 
 Most learning apps do one thing well: they either show you how to solve a math problem or tell you whether your writing is any good.
